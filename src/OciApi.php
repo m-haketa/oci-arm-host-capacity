@@ -73,8 +73,32 @@ class OciApi
     "agentConfig": {
         "pluginsConfig": [
             {
+                "name": "Vulnerability Scanning",
+                "desiredState": "DISABLED"
+            },
+            {
+                "name": "Oracle Java Management Service",
+                "desiredState": "DISABLED"
+            },
+            {
+                "name": "OS Management Service Agent",
+                "desiredState": "ENABLED"
+            },
+            {
+                "name": "Compute Instance Run Command",
+                "desiredState": "ENABLED"
+            },
+            {
                 "name": "Compute Instance Monitoring",
                 "desiredState": "ENABLED"
+            },
+            {
+                "name": "Block Volume Management",
+                "desiredState": "DISABLED"
+            },
+            {
+                "name": "Bastion",
+                "desiredState": "DISABLED"
             }
         ],
         "isMonitoringDisabled": false,
@@ -91,7 +115,8 @@ class OciApi
     "shapeConfig": {
         "ocpus": {$config->ocpus},
         "memoryInGBs": {$config->memoryInGBs}
-    }
+    },
+    "is_pv_encryption_in_transit_enabled": true
 }
 EOD;
 
